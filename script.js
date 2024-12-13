@@ -1,5 +1,5 @@
 async function getData() {
-    const url = "https://data.gov.bh/explore/dataset/01-statistics-of-students-nationalities_updated/table/?disjunctive.year&disjunctive.semester&disjunctive.the_programs&sort=number_of_students";
+    const url = "https://data.gov.bh/explore/embed/dataset/01-statistics-of-students-nationalities_updated/table/?disjunctive.year&disjunctive.semester&disjunctive.the_programs&sort=number_of_students";
     try {
         const response = await fetch(url);
         if (!response.ok) {
