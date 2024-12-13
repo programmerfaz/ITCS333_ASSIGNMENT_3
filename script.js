@@ -10,18 +10,20 @@ async function getData() {
     const data = await response.json();
     const tablebody = document.getElementById("table1");
 
-    data.results.forEach(element => {
+    data.records.forEach(record => {
+        const fields = record.fields; // Accessing the fields object
         const row = document.createElement("tr");
         row.innerHTML = `
-            <td>${element.year || "N/A"}</td>
-            <td>${element.semester || "N/A"}</td>
-            <td>${element.the_programs || "N/A"}</td>
-            <td>${element.the_nationality || "N/A"}</td>
-            <td>${element.colleges || "N/A"}</td>
-            <td>${element.number_of_students || "N/A"}</td>
+            <td>${fields.year || "N/A"}</td>
+            <td>${fields.semester || "N/A"}</td>
+            <td>${fields.the_programs || "N/A"}</td>
+            <td>${fields.nationalities || "N/A"}</td>
+            <td>${fields.colleges || "N/A"}</td>
+            <td>${fields.enrollment_count || "N/A"}</td>
         `;
         tablebody.appendChild(row);
     });
+    
 }
 
 getData();
